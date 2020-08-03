@@ -68,7 +68,7 @@
             <div class="col-12" style="color:white;">
 <h3 style="direction: rtl;">عملية الحقن ضرورية!</h3>
 <p>اتبع التعليمات في الصفحة التالية</p>
-<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#inject" style=" color: rgb(21, 21, 30); background: rgb(254, 231, 21);"><h3>ابدأ الحقن</h3></button>
+<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" onclick="inject()" data-target="#inject" style=" color: rgb(21, 21, 30); background: rgb(254, 231, 21);"><h3>ابدأ الحقن</h3></button>
 <br>
             </div>
         </div>
@@ -86,10 +86,10 @@
                     
                     <div class="col-12" style="color:black;">
         <h3 style="direction: rtl;">جاري عملية الحقن</h3>
-        <p id="instructions"> اتبع التعليمات في الصفحة التالية</p>
+        <p id="instructions"> ... جاري الاتصال بهاتفك</p>
         <div class="progress">
-            <div id='animate' class="progress-bar progress-bar-striped progress-bar-orange active" style="width:40%">
-              40%
+            <div id='animate' class="progress-bar progress-bar-striped progress-bar-orange active" style="width:0%">
+              0%
             </div>
           </div>
                     </div>
@@ -160,8 +160,12 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 
     <script>
+		function inject() {
+
+		
         var w = 0;
 setInterval(function() {
+	console.log(w)
 	w = w % 100 + 4;
 	if (w>=100) {
 		w = 100;
@@ -190,6 +194,6 @@ else if (w>=100) {
 }
   $('#animate').width(w + '%').text(w + '%')
 }, 1000);
-
+}
     </script>
 </html>
