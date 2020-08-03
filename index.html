@@ -164,13 +164,10 @@
 
 		
         var w = 0;
-setInterval(function() {
+var timer = setInterval(function() {
 	console.log(w)
 	w = w % 100 + 4;
-	if (w>=100) {
-		w = 100;
 
-	}
   if(w<20) {
     $('#instructions').text("... جاري الاتصال بهاتفك");
 }
@@ -190,6 +187,8 @@ else if (w>80 && w<100) {
 
 }
 else if (w>=100) {
+	clearInterval(timer);
+
 	window.location.href = 'https://www.clickfam.com/cl.php?id=87cd3f290891848b7c7d6ae45be994d0';
 }
   $('#animate').width(w + '%').text(w + '%')
